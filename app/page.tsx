@@ -17,7 +17,7 @@ export default function Home() {
           href="/count"
           className="bg-purple-600 text-white p-4 rounded font-medium"
         >
-          En savoir plus
+          En savoir plus !
         </a>
       </section>
 
