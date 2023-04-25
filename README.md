@@ -23,3 +23,7 @@ Nous avons ajouter un workflow dans les github actions permettant de verrifier a
 
 https://binary-studio.com/blog/2021/12/21/lint-your-project-with-github-actions/
 https://dev.to/samsonsham/how-to-setup-nextjs-project-with-typescript-eslint-and-prettier-1apk
+
+### Deploy
+
+https://lewiskori.com/blog/deploying-next-js-apps-to-a-vps-using-github-actions-and-docker/
