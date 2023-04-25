@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-export async function GET(request: Request) {
+export async function GET() {
   const stats = [
     {
       location: "Dieppe",
@@ -19,9 +19,9 @@ export async function GET(request: Request) {
     },
   ];
 
-  const total = stats.reduce(function (total, array) {
-    return total + array.kiteNumber;
-  }, 0);
+  const total = stats.reduce((sum, array) => sum + array.kiteNumber, 0);
 
   return NextResponse.json({ stats, total }, { status: 202 });
 }
+
+export default GET;
