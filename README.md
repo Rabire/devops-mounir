@@ -1,9 +1,17 @@
-## Run dev
+## Husky
 
-```bash
-npm run dev
-```
+// TODO:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser.
+## Config github repository
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+// TODO: can not push on main
+// TODO: can not merge PR if not revewed
+// TODO: can not merge PR if CI fails
+
+## Github actions
+
+### Lint
+
+Nous avons ajouter un workflow dans les github actions permettant de verrifier aue le code qui vient d'etre push ne comporte pas d'erreurs.
+
+https://binary-studio.com/blog/2021/12/21/lint-your-project-with-github-actions/
