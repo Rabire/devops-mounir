@@ -1,6 +1,9 @@
+"use client";
+
 import Count from "@/components/Count";
 import React from "react";
 import Image from "next/image";
+import useFetchStats from "@/hooks/useFetchStats";
 
 const DATA = [
   { city: "Dieppe", count: 11190, img: "/dieppe.jpg" },
@@ -9,6 +12,8 @@ const DATA = [
 ];
 
 const CountPage = () => {
+  const { stats } = useFetchStats(true);
+
   return (
     <main>
       <h1 className="text-3xl text-center my-8 mx-auto bg-white p-4 fixed w-full">
@@ -16,9 +21,9 @@ const CountPage = () => {
       </h1>
 
       <div className="grid grid-cols-3">
-        {DATA.map((el) => (
+        {stats?.stats.map((el) => (
           <div
-            key={el.city}
+            key={el.location}
             className="flex flex-col items-center justify-center h-screen relative"
           >
             <Image
@@ -27,8 +32,8 @@ const CountPage = () => {
               fill
               className="-z-10 object-cover opacity-60"
             />
-            <h2 className="text-xl font-bold mb-6">{el.city}</h2>
-            <Count count={el.count} />
+            <h2 className="text-xl font-bold mb-6">{el.location}</h2>
+            <Count count={el.kiteNumber} />
           </div>
         ))}
       </div>
