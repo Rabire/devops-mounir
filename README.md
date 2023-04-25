@@ -1,12 +1,14 @@
-## Husky
+## Husky - on commit
 
-// TODO:
+// TODO: format (prettier)
+// TODO: explain commit lint
 
 ## Config github repository
 
 // TODO: can not push on main
 // TODO: can not merge PR if not revewed
 // TODO: can not merge PR if CI fails
+// TODO: auto delete branch on merge
 
 ## Github actions
 
