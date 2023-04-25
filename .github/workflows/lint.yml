@@ -1,4 +1,4 @@
-name: Lint and format
+name: Lint
 
 on: [push]
 

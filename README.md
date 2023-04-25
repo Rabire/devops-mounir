@@ -27,3 +27,12 @@ https://dev.to/samsonsham/how-to-setup-nextjs-project-with-typescript-eslint-and
 ### Deploy
 
 https://lewiskori.com/blog/deploying-next-js-apps-to-a-vps-using-github-actions-and-docker/
+
+## Run
+
+```
+docker build -t devops . --no-cache
+docker run -p 3033:3000 devops
+```
+
+http://localhost:3033
