@@ -6,7 +6,7 @@ import Image from "next/image";
 import useFetchStats from "@/hooks/useFetchStats";
 
 const CountPage = () => {
-  const { stats } = useFetchStats(true);
+  const { stats } = useFetchStats();
 
   return (
     <main>
