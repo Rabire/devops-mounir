@@ -1,12 +1,17 @@
-## Husky - on commit
+## Husky - pre-commit
 
-// TODO: format (prettier)
-// TODO: explain commit lint
+Husky permet de linter, tester ou formatter le code juste avant de commit.
+
+ESLint check certaines pratiques de developpementafin de prevenir des bugs.
+Prettier formatte le code afin de l'unifier.
+Commit lint veille a ce aue les messages de commit soient corrects.
+
+Tout cela permet d'avoir du code propre sur github.
 
 ## Config github repository
 
 // TODO: can not push on main
-// TODO: can not merge PR if not revewed
+// TODO: can not merge PR if not revewed ok
 // TODO: can not merge PR if CI fails
 // TODO: auto delete branch on merge
 
