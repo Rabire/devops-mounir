@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Card from "@/components/Card";
-import { useState } from "react";
 
 export default function Home() {
   return (
@@ -8,7 +7,7 @@ export default function Home() {
       <section className="h-screen flex items-center justify-center flex-col gap-4 relative">
         <Image
           src="/hero-bg.jpg"
-          // alt="bg"
+          alt="bg"
           fill
           className="-z-10 object-cover"
         />
