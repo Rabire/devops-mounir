@@ -1,6 +1,9 @@
-name: Lint
+name: Lint and format
 
 on: [push]
+
+env: # environment variables (available in any part of the action)
+  NODE_VERSION: 16
 
 jobs:
   linting:
@@ -10,7 +13,7 @@ jobs:
       - name: Install NodeJS
         uses: actions/setup-node@v2
         with:
-          node-version: 16
+          node-version: ${{ env.NODE_VERSION }}
 
       - name: Code Checkout
         uses: actions/checkout@v2
@@ -20,3 +23,6 @@ jobs:
 
       - name: Code Linting
         run: npm run lint
+
+      - name: Code Format
+        run: npm run format
