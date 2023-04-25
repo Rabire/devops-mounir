@@ -1,8 +1,8 @@
-import { getStats } from "@/utils/stats";
-import { GlobalStats } from "@/utils/types-validation";
+import getStats from "@/utils/stats";
+import { GlobalStats } from "@/utils/types";
 import { useEffect, useState } from "react";
 
-const useFetchStats = (refreshOnMount = false) => {
+const useFetchStats = () => {
   const [stats, setStats] = useState<GlobalStats>();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -16,7 +16,7 @@ const useFetchStats = (refreshOnMount = false) => {
   };
 
   useEffect(() => {
-    refreshOnMount && refreshStats();
+    refreshStats();
   }, []);
 
   return { stats, refreshStats, isLoading };
