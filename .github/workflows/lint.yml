@@ -23,6 +23,3 @@ jobs:
 
       - name: Code Linting
         run: npm run lint
-
-      - name: Code Format
-        run: npm run format
