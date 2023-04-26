@@ -1,53 +1,24 @@
-name: Build and Deploy
+name: Deploy
 
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the main branch
 on:
   push:
-    branches: [main, dockerize-app]
-  workflow_dispatch:
-    inputs:
-      logLevel:
-        description: "Log level"
-        required: true
-        default: "warning"
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+    branches:
+      - main
+      - dockerize-app
+  release:
+    types:
+      - created
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-    container: node:14
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+  deploy_preprod:
+    if: github.event_name != 'release' && github.ref == 'refs/heads/main'
+    # runs-on: self-hosted
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-      - name: Build and Publish to Github Packages Registry
-        uses: elgohr/Publish-Docker-Github-Action@master
-        with:
-          name: Rabire/devops-mounir/devops-mounir
-          registry: ghcr.io
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-          dockerfile: Dockerfile
-          tags: latest
-
-      - name: Deploy package to vps
+      - uses: actions/checkout@v1
+      - name: Push to server
         uses: appleboy/ssh-action@master
-        env:
-          GITHUB_USERNAME: ${{ secrets.USERNAME }}
-          GITHUB_TOKEN: ${{ secrets. GITHUB_TOKEN }}
         with:
-          host: ${{ secrets.DEPLOY_HOST }}
-          port: ${{ secrets.DEPLOY_PORT }}
-          username: ${{ secrets.DEPLOY_USER }}
-          key: ${{ secrets.DEPLOY_KEY }}
-          envs: GITHUB_USERNAME, GITHUB_TOKEN
-          script: |
-            docker login ghcr.io -u $GITHUB_USERNAME -p $GITHUB_TOKEN
-            docker pull ghcr.io/Rabire/devops-mounir/devops-mounir:latest
-            docker stop devops-mounir
-            docker system prune -f
-            docker compose up
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          command_timeout: 20m
+          script: cd projects/devops-mounir && git pull && ./preprod.sh
