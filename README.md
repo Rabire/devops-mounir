@@ -19,7 +19,6 @@ Tout cela permet d'avoir du code propre sur github
 // TODO: can not push on main
 
 ![Capture d’écran 2023-04-25 à 12 02 31](https://user-images.githubusercontent.com/49844846/234576937-c44f8654-a8ad-48da-97ae-34fce0110d72.png)
-
 ![Capture d’écran 2023-04-25 à 14 34 48](https://user-images.githubusercontent.com/49844846/234577206-f8d93adc-9f65-4b1b-851c-c5ea89b8a9cf.png)
 
 ## Github actions
@@ -43,7 +42,7 @@ Au final, on a utilisé un moyen plus straight forward pour entrer dans le VPS e
 
 Tout les reste écrits avec jest se lancent dans la CI après chaque commit pousses.
 
-![Capture d’écran 2023-04-25![Capture d’écran 2023-04-25 à 11 30 02](https://user-images.githubusercontent.com/49844846/234576787-7153885d-9bb0-4d6e-b60e-d9bfad7600d7.png)
+![Capture d’écran 2023-04-25 à 11 30 02](https://user-images.githubusercontent.com/49844846/234576787-7153885d-9bb0-4d6e-b60e-d9bfad7600d7.png)
 ![Capture d’écran 2023-04-25 à 11 30 02](https://user-images.githubusercontent.com/49844846/234576860-de4ef03d-b18b-46c7-a54c-a7b3f8343310.png)
 
 
