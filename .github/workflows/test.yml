@@ -1,31 +1,25 @@
-name: Auto-version
+name: Test
 
-on:
-  push:
-    branches:
-      - main
+on: [push]
+
+env: # environment variables (available in any part of the action)
+  NODE_VERSION: 16
 
 jobs:
-  build:
+  testing:
+    name: Testing
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
+      - name: Install NodeJS
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Code Checkout
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: "14.x"
+      - name: Install Dependencies
+        run: npm ci
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Version project
-        run: npm version patch
-
-      - name: Push changes
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "Auto-versioned by GitHub Actions"
-          commit_options: "--no-verify"
+      - name: Code Testing
+        run: npm run test
