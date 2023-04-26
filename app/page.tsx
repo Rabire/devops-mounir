@@ -11,7 +11,9 @@ export default function Home() {
           fill
           className="-z-10 object-cover"
         />
-        <h1 className="text-3xl font-bold">Journée mondiale du cerf-volant</h1>
+        <h1 className="text-3xl font-bold">
+          Journée mondiale du cerf-volant ookok
+        </h1>
         <h2 className="text-xl">16 août</h2>
         <a
           href="/count"
