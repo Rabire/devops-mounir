@@ -18,7 +18,7 @@ test("check if total is equal to the sum of kiteNumbers", () => {
 
   const totalResponse = response.stats.reduce(
     (sum, array) => sum + array.kiteNumber,
-    0,
+    0
   );
   expect(response.total).toBe(totalResponse);
 });
