@@ -3,4 +3,5 @@
 
 npm run lint $1
 npm run format $1
+npm run test $1
 npx commitlint --edit $1
