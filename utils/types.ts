@@ -1,4 +1,4 @@
-type Stats = {
+export type Stats = {
   location: string;
   kiteNumber: number;
   img: string;
