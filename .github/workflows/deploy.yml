@@ -10,8 +10,7 @@ on:
       - created
 jobs:
   deploy_preprod:
-    if: github.event_name != 'release' && github.ref == 'refs/heads/main'
-    # runs-on: self-hosted
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v1
       - name: Push to server
@@ -21,4 +20,4 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
           command_timeout: 20m
-          script: cd projects/devops-mounir && git pull && ./preprod.sh
+          script: cd projects/devops-mounir && git pull && docker-compose up -d --build
