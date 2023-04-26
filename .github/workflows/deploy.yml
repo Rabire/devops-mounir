@@ -9,7 +9,7 @@ on:
     types:
       - created
 jobs:
-  deploy_preprod:
+  deploy:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v1
@@ -19,5 +19,5 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
-          command_timeout: 20m
+          command_timeout: 10m
           script: cd projects/devops-mounir && git pull && docker-compose up -d --build
