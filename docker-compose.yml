@@ -1,0 +1,7 @@
+version: "3"
+
+services:
+  devops-mounir:
+    build: .
+    ports:
+      - 3033:3000

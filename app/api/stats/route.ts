@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 import { generateStats } from "@/utils/stats";
 import { NextResponse } from "next/server";
 
@@ -6,5 +7,3 @@ export async function GET() {
 
   return NextResponse.json(stats, { status: 202 });
 }
-
-export default GET;
