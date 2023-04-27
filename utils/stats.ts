@@ -1,5 +1,7 @@
+import { GlobalStats, Stats } from "./types";
+
 export const generateStats = () => {
-  const stats = [
+  const stats: Stats[] = [
     {
       location: "Dieppe",
       kiteNumber: Math.floor(Math.random() * 20000 + 1),
@@ -18,15 +20,16 @@ export const generateStats = () => {
   ];
 
   const total = stats.reduce((sum, array) => sum + array.kiteNumber, 0);
+
   return { stats, total };
 };
 
 const getStats = async () => {
-  const res = await fetch("/api/stats");
+  const response = await fetch("http://localhost:3000/api/stats");
 
-  if (!res.ok) throw new Error("Failed to get stats");
+  const apiStats = (await response.json()) as GlobalStats;
 
-  return res.json();
+  return apiStats;
 };
 
 export default getStats;

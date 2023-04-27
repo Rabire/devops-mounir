@@ -1,12 +1,10 @@
-"use client";
-
 import Count from "@/components/Count";
 import React from "react";
 import Image from "next/image";
-import useFetchStats from "@/hooks/useFetchStats";
+import getStats from "@/utils/stats";
 
-const CountPage = () => {
-  const { stats } = useFetchStats();
+const CountPage = async () => {
+  const stats = await getStats();
 
   return (
     <main>
