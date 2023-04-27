@@ -8,12 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}'",
-<<<<<<< HEAD
-    "test": "jest"
-=======
     "prepare": "husky install",
     "test": "jest --watch"
->>>>>>> 49d35c5... test: integration
   },
   "dependencies": {
     "@testing-library/react": "^14.0.0",
