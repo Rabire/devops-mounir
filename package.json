@@ -8,9 +8,15 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}'",
+<<<<<<< HEAD
     "test": "jest"
+=======
+    "prepare": "husky install",
+    "test": "jest --watch"
+>>>>>>> 49d35c5... test: integration
   },
   "dependencies": {
+    "@testing-library/react": "^14.0.0",
     "@types/node": "18.16.0",
     "@types/react": "18.0.38",
     "@types/react-dom": "18.0.11",
@@ -25,14 +31,25 @@
   "devDependencies": {
     "@commitlint/cli": "^17.6.1",
     "@commitlint/config-conventional": "^17.6.1",
+<<<<<<< HEAD
     "@types/jest": "^29.5.1",
     "eslint": "^8.39.0",
+=======
+>>>>>>> 49d35c5... test: integration
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.0",
     "jest": "^29.5.0",
+<<<<<<< HEAD
     "prettier": "^2.8.8",
+=======
+    "jest-environment-jsdom": "29.5.0",
+    "@testing-library/jest-dom": "5.16.4",
+    "@testing-library/react": "14.0.0",
+    "@testing-library/user-event": "14.4.3",
+    "@types/testing-library__jest-dom": "5.14.5",
+>>>>>>> 49d35c5... test: integration
     "ts-jest": "^29.1.0",
     "typescript": "^5.0.4"
   }
