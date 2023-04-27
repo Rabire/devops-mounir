@@ -4,7 +4,9 @@
     "quotes": ["error", "double"],
     "import/extensions": "off",
     "prettier/prettier": "error",
-    "comma-dangle": "off"
+    "comma-dangle": "off",
+    "linebreak-style": ["error", "windows"]
   },
   "plugins": ["prettier"]
-}
+  }
+

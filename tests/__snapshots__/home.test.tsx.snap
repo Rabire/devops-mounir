@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders a link 1`] = `
+<a
+  class="bg-purple-600 text-white p-4 rounded font-medium"
+  href="/count"
+>
+  En savoir plus !
+</a>
+`;
