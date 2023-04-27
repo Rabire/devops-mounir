@@ -3,10 +3,9 @@
   "rules": {
     "quotes": ["error", "double"],
     "import/extensions": "off",
-    "prettier/prettier": "error",
+    "prettier/prettier": "off",
     "comma-dangle": "off",
-    "linebreak-style": ["error", "windows"]
+    "linebreak-style": "off"
   },
   "plugins": ["prettier"]
-  }
-
+}
